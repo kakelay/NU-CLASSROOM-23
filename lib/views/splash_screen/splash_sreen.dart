@@ -1,11 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-
-import '../home/widgets/left_drawer.dart';
 import '../home_page.dart';
-
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key, required this.title});
 
@@ -29,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 3), (() {
       Navigator.push(context,
           MaterialPageRoute(builder: (BuildContext context) {
-        return const MyHomePage(title: 'Norton Classroom');
+        return const MyHomePage(title: 'Norton Classroom', count: 10,);
       }));
     }));
   }
@@ -37,7 +32,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       backgroundColor: Colors.white,
       body: Center(
         child: SingleChildScrollView(
@@ -65,18 +59,12 @@ class _SplashScreenState extends State<SplashScreen> {
               // ),
               const Text(
                 "NORTON - CLASSROOM",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
-                ),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               )
             ],
           ),
         ),
       ),
-      
     );
   }
 }
-
- 

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'views/home_page.dart';
 import 'views/splash_screen/splash_sreen.dart';
 
 void main() {

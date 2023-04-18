@@ -8,12 +8,12 @@ class LeftDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.85,
+      width: MediaQuery.of(context).size.width * 0.80,
       child: Drawer(
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-              // currentAccountPictureSize: const Size.fromRadius(38),
+              currentAccountPictureSize: const Size.fromRadius(35),
               currentAccountPicture: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(150)),
                 child: Image.asset(
@@ -21,6 +21,7 @@ class LeftDrawer extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
+
               accountName: const Text(" "),
               accountEmail: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
