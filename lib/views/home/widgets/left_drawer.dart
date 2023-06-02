@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nuclassroom23/models/response/card_class_detail.dart';
+import 'package:nuclassroom23/views/home/home_page.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({
@@ -56,49 +58,38 @@ class LeftDrawer extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      // ignore: sort_child_properties_last
-                      child: const Text('Switch'),
-                      style: ButtonStyle(
-                        elevation: MaterialStateProperty.all(0),
-                        foregroundColor:
-                            MaterialStateProperty.all(Colors.blueGrey),
-                        side: MaterialStateProperty.all(
-                          const BorderSide(
-                            width: 2,
-                            color: Colors.white,
-                          ),
-                        ),
-                        shape: MaterialStateProperty.all(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    // OutlinedButton(
-                    //   onPressed: () {},
-                    //   // ignore: sort_child_properties_last
-                    //   child: const Text('Switch'),
-                    //   style: OutlinedButton.styleFrom(
-                    //     foregroundColor: Colors.white,
-                    //     shape: const RoundedRectangleBorder(
-                    //       side: BorderSide(
-                    //         color: Colors.white,
-                    //         style: BorderStyle.solid,
-                    //         width: 2,
-                    //       ),
-                    //       borderRadius: BorderRadius.all(
-                    //         Radius.circular(15),
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
-                  ),
+                  // ElevatedButton(
+                  //   // Within the `FirstRoute` widget
+                  //   onPressed: () {},
+                  //   // ignore: sort_child_properties_last
+                  //   child: const Text('Back to Class'),
+                  //   style: ButtonStyle(
+                  //     elevation: MaterialStateProperty.all(0),
+                  //     foregroundColor:
+                  //         MaterialStateProperty.all(Colors.blueGrey),
+                  //     side: MaterialStateProperty.all(
+                  //       const BorderSide(
+                  //         width: 2,
+                  //         color: Colors.white,
+                  //       ),
+                  //     ),
+                  //     shape: MaterialStateProperty.all(
+                  //       RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(10),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  ElevatedButton(
+                    child: const Text('Back to Class'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MyHomePage(title: "", count: 0)),
+                      );
+                    },
+                  )
                 ],
               ),
 

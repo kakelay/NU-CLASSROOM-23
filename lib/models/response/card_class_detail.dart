@@ -32,11 +32,11 @@ class CardClassDeatailData {
   });
 
   int id;
-  RestaurantAttributes attributes;
+  CardClassDetailAttributes attributes;
 
   factory CardClassDeatailData.fromJson(Map<String, dynamic> json) => CardClassDeatailData(
         id: json["id"],
-        attributes: RestaurantAttributes.fromJson(json["attributes"]),
+        attributes: CardClassDetailAttributes.fromJson(json["attributes"]),
       );
 
   Map<String, dynamic> toJson() => {
@@ -45,8 +45,8 @@ class CardClassDeatailData {
       };
 }
 
-class RestaurantAttributes {
-  RestaurantAttributes({
+class CardClassDetailAttributes {
+  CardClassDetailAttributes({
     required this.name,
     required this.category,
     required this.discount,
@@ -68,8 +68,8 @@ class RestaurantAttributes {
   DateTime publishedAt;
   Picture picture;
 
-  factory RestaurantAttributes.fromJson(Map<String, dynamic> json) =>
-      RestaurantAttributes(
+  factory CardClassDetailAttributes.fromJson(Map<String, dynamic> json) =>
+      CardClassDetailAttributes(
         name: json["name"],
         category: json["category"],
         discount: json["discount"],

@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
-import 'package:nuclassroom23/models/response/card_class_detail.dart';
 import 'package:nuclassroom23/repository/card_class_detail_repository.dart';
 
 import '../data/response/api_respone.dart';
 
-class CardClassDetalViewModel extends ChangeNotifier {
+class CardClassDetailViewModel extends ChangeNotifier {
   // final _restaurantRepository = RestaurantRepository();
   final _classclassdetailRepository = CardClassDetailRepository();
-  ApiRespone<CardClassDetail> cardclassdetails = ApiRespone.loading();
+   dynamic cardclassdetails = ApiRespone.loading();
+//  ApiRespone<CardClassDetail> cardclassdetails = ApiRespone.loading();
 //  ApiRespone<ImageModel> image =ApiRespone();
 
   ///  post image part
@@ -26,18 +26,18 @@ class CardClassDetalViewModel extends ChangeNotifier {
   // }
 
   ///  get api  restaurant  part
-  setRestaurantList(response) {
-    // print("response:3: ${response.body}");
+  setCardClassDetailList(response) {
+   //  print("response:3: ${response.body}");
     cardclassdetails = response;
     notifyListeners();
   }
 
   Future<dynamic> fetchAllCardClassDetail() async {
     await _classclassdetailRepository
-        .getRestaurants()
+        .getCardClassDetailList()
         .then(
-            (cardclassdetail) => setRestaurantList(ApiRespone.completed(cardclassdetail)))
+            (cardclassdetail) => setCardClassDetailList(ApiRespone.completed(cardclassdetail)))
         .onError((error, stackTrace) =>
-            setRestaurantList(ApiRespone.error(error.toString())));
+            setCardClassDetailList(ApiRespone.error(error.toString())));
   }
 }
